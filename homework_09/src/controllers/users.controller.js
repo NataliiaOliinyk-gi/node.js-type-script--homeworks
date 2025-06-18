@@ -36,10 +36,10 @@ export const addUserController = async (req, res) => {
 
 export const changeUserPasswordController = async (req, res) => {
 
-    await validateBody(changePasswordSchema, req.body);
-
     const token = getToken(req.headers)
     const { id } = jwt.verify(token, JWT_SECRET);
+
+    await validateBody(changePasswordSchema, req.body);
 
     const result = await usersService.changePassword(id, req.body);
     if (!result) throw HttpExeption(404, `User with id=${id} not found`);
@@ -51,13 +51,10 @@ export const changeUserPasswordController = async (req, res) => {
 
 export const changeUserEmailController = async (req, res) => {
 
-    await validateBody(changeEmailSchema, req.body);
-
     const token = getToken(req.headers)
     const { id } = jwt.verify(token, JWT_SECRET);
 
-    console.log(id);
-    
+    await validateBody(changeEmailSchema, req.body);
 
     const result = await usersService.changeEmail(id, req.body);
     if (!result) throw HttpExeption(404, `User with id=${id} not found`);

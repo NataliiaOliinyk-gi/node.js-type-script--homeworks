@@ -6,6 +6,10 @@ import { emailValidation } from "../constants/user.constants.js";
 const User = sequelize.define(
     "user",
     {
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         email: {
             type: DataTypes.STRING,
             unique: {

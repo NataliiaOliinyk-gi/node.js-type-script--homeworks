@@ -19,6 +19,7 @@ export const emailSchema = Yup
     .required();
 
 export const addUserSchema = Yup.object({
+    username: Yup.string().trim().required(),
     email: emailSchema,
     password: passwordSchema
 }).noUnknown(true, ({ unknown }) => `Unknown field: ${unknown}`);

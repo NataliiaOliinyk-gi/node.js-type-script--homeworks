@@ -3,9 +3,9 @@ import cors from "cors";
 
 import errorHandler from "./midllewares/errorHandler.js";
 import notFoundHandler from "./midllewares/notFoundHandler.js";
+
 import userRouter from "./routers/user.router.js";
 import authRouter from "./routers/auth.router.js";
-
 
 
 const startServer = () => {
