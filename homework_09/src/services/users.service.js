@@ -55,6 +55,6 @@ export const deleteUser = async (id, { password }) => {
 export const getAdmins = async () => {
     const result = await User.findAll();
 
-    const admins = result.find(user => user.role === "admin");
+    const admins = result.filter(user => user.role === "admin");
     return admins;
 };
