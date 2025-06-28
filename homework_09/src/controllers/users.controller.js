@@ -44,6 +44,9 @@ export const changeUserPasswordController = async (req, res) => {
     const result = await usersService.changePassword(id, req.body);
     if (!result) throw HttpExeption(404, `User with id=${id} not found`);
 
+    result.mustChangePassword = false;
+    await result.save();
+
     res.json({
         message: "Password change successfully"
     });

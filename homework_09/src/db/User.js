@@ -28,6 +28,11 @@ const User = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        mustChangePassword: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
         role: {
             type: DataTypes.STRING,
             defaultValue: "user",
@@ -42,6 +47,6 @@ const User = sequelize.define(
     }
 );
 
-// User.sync();
+// User.sync({alter:true});
 
 export default User;
