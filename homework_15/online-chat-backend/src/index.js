@@ -3,9 +3,9 @@ import "dotenv/config";
 import startServer from "./server.js";
 import startWebsocketServer from "./wsServer.js";
 
-const boostrap = async () => {
+const bootstrap = async () => {
     startServer();
     startWebsocketServer();
 };
 
-boostrap();
+bootstrap();
