@@ -1,4 +1,4 @@
-## Node.js & TypeScript: Домашнее задание 16
+## Node.js & TypeScript: Домашнее задание 17
 
 ### Задание 1
 
