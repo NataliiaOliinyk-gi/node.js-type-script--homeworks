@@ -6,7 +6,7 @@
 // `discount` (число, по умолчанию равен 0)
 // 2. Функция должна возвращать общую стоимость товаров с учетом скидки. Если скидка не указана, она считается равной нулю.
 
-console.log("Задание 1");
+console.log("Task 1");
 
 const calculateTotal = (
   price: number,
@@ -23,7 +23,7 @@ console.log(calculateTotal(30, 5, 10));
 // 1. Создайте переменную `id`, которая может быть либо строкой, либо числом.
 // 2. Напишите функцию `displayId`, которая принимает эту переменную и выводит сообщение, содержащее значение ID. Если `id` — строка, выведите её в верхнем регистре. Если `id` — число, умножьте его на 10 перед выводом.
 
-console.log("Задание 2");
+console.log("Task 2");
 
 let id: string | number;
 
@@ -46,7 +46,7 @@ console.log(displayId("thirty four"));
 // `status` (строка, может принимать значения "pending", "shipped" или "delivered")
 // 2. Напишите функцию `filterOrdersByStatus`, которая принимает этот массив и строку `status`, и возвращает массив заказов, соответствующих указанному статусу.
 
-console.log("Задание 3");
+console.log("Task 3");
 
 type Status = "pending" | "shipped" | "delivered";
 
@@ -95,26 +95,26 @@ console.log(filterOrdersByStatus(orders, "delivered"));
 // количество на складе (число)
 // 2. Напишите функцию `updateStock`, которая принимает объект `inventory` (где ключ — это название товара, а значение — количество на складе) и кортеж `productInfo`, обновляет количество товара в объекте `inventory` и возвращает обновленный объект.
 
-console.log("Задание 4");
+console.log("Task 4");
 
-let productInfo: [string, number, number];
+// type ProductInfo = [string, number, number];
+type ProductInfo = [name: string, price: number, quantity: number];
 
-let inventory: {
+interface IInventory {
   [key: string]: number;
-};
+}
 
 const updateStock = (
-  inventory: { [key: string]: number },
-  productInfo: [string, number, number]
-): { [key: string]: number } => {
+  inventory: IInventory,
+  productInfo: ProductInfo
+): IInventory => {
   const [name, price, quantity] = productInfo;
-
   if (inventory[name]) {
     inventory[name] = quantity;
   }
   return inventory;
 };
 
-console.log(updateStock({ product1: 5 }, ["product1", 4.5, 10]));
-console.log(updateStock({ product2: 4 }, ["product2", 5.5, 12]));
-console.log(updateStock({ product3: 8 }, ["product2", 5.5, 12]));
+console.log(updateStock({ sneakers: 5 }, ["sneakers", 4.5, 10]));
+console.log(updateStock({ sweatpants: 4 }, ["sweatpants", 5.5, 12]));
+console.log(updateStock({ tshirt: 8 }, ["sweatpants", 5.5, 12]));
