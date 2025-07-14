@@ -57,9 +57,9 @@ const getLastElement = <T>(array: T[]): T => {
   return array[array.length - 1];
 };
 
-console.log(getLastElement([1, 2, 3, 4, 5]));
-console.log(getLastElement(["1", "2", "3"]));
-console.log(getLastElement([{ name: "Nata" }, { name: "Anna" }]));
+console.log(getLastElement<number>([1, 2, 3, 4, 5]));
+console.log(getLastElement<string>(["1", "2", "3"]));
+console.log(getLastElement<object>([{ name: "Nata" }, { name: "Anna" }]));
 
 // Задание 5
 // Создайте обобщенную функцию `make Triple`, которая принимает три аргумента одного типа и возвращает массив из этих трёх элементов.
@@ -70,6 +70,6 @@ const makeTriple = <T>(val1: T, val2: T, val3: T): T[] => {
   return [val1, val2, val3];
 };
 
-console.log(makeTriple(1, 2, 3));
-console.log(makeTriple("1", "2", "3"));
-console.log(makeTriple({ name: "Nata" }, { name: "Anna" }, { name: "Nick" }));
+console.log(makeTriple<number>(1, 2, 3));
+console.log(makeTriple<string>("1", "2", "3"));
+console.log(makeTriple<object>({ name: "Nata" }, { name: "Anna" }, { name: "Nick" }));
